@@ -1,336 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bastakoti Bansha Anusandhan Parishad Nepal</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
-<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-primary: '#6366f1',
-secondary: '#4f46e5'
-},
-borderRadius: {
-'none': '0px',
-'sm': '4px',
-DEFAULT: '8px',
-'md': '12px',
-'lg': '10px',
-'xl': '10px',
-'2xl': '24px',
-'3xl': '32px',
-'full': '9999px',
-'button': '8px'
-}
-}
-}
-}
-</script>
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-.hero-gradient {
-background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 100%);
-}
-.scroll-down {
-animation: bounce 2s infinite;
-}
-@keyframes bounce {
-0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-40% {transform: translateY(-10px);}
-60% {transform: translateY(-5px);}
-}
-.slide {
-opacity: 0;
-z-index: 1;
-transition: opacity 1s ease-in-out;
-}
-.slide.active {
-opacity: 1;
-z-index: 2;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bama Travels - Your Gateway to Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2A4B7C', // Changed to blue
+                        secondary: '#FDCD22'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '8px',
+                        DEFAULT: '12px',
+                        'md': '16px',
+                        'lg': '20px',
+                        'xl': '24px',
+                        '2xl': '28px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '12px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        .hero-section {
+            background-image: url('https://public.readdy.ai/ai/img_res/d40395719df5f0dfb54c713c5c802d39.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .review-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
 </head>
 <body class="bg-white">
-<header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
-<nav class="container mx-auto px-6 py-4">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<img src="https://readdy.ai/api/search-image?query=A minimalist and elegant logo design featuring a stylized family tree symbol with traditional Nepalese decorative elements. The design incorporates clean lines and sacred geometry patterns, rendered in deep indigo blue color. The composition is balanced and professional, suitable for a heritage organization. The style is modern yet culturally rooted, with subtle gradients and precise details&width=48&height=48&seq=1&orientation=squarish" alt="BBAP Logo" class="w-12 h-12 object-contain">
-<div class="font-['Pacifico'] text-2xl text-primary">बस्ताकोटी वंश अनुसन्धान परिषद्</div>
-</div>
-<div class="hidden md:flex items-center space-x-8">
-<a href="#home" class="text-blue-700 hover:text-primary transition-colors">Home</a>
-<a href="#about" class="text-blue-700 hover:text-primary transition-colors">About Us</a>
-<a href="#contact" class="text-blue-700 hover:text-primary transition-colors">Contact</a>
-<button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-secondary transition-colors cursor-pointer whitespace-nowrap">
-Download Banshabali
-</button>
-</div>
-<button class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer">
-<i class="ri-menu-line text-2xl"></i>
-</button>
-</div>
-</nav>
-</header>
-<main>
-<section id="home" class="relative min-h-screen flex items-center">
-<div class="absolute inset-0 w-full h-full">
-<div class="slideshow relative w-full h-full">
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000" style="background-image: url('https://public.readdy.ai/ai/img_res/5efd88595ef17f6b0d7e3afa08a0acf6.jpg'); background-size: cover; background-position: center;"></div>
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000" style="background-image: url('https://public.readdy.ai/ai/img_res/0d8cbd3ab9f535e293acdf9e587f4450.jpg'); background-size: cover; background-position: center;"></div>
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000" style="background-image: url('https://public.readdy.ai/ai/img_res/e650d645c2889aee2b0f5da409cfbc2d.jpg'); background-size: cover; background-position: center;"></div>
-<div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000" style="background-image: url('https://public.readdy.ai/ai/img_res/128dcc84749e0c89af41e993b57c592b.jpg'); background-size: cover; background-position: center;"></div>
-</div>
-</div>
-<div class="container mx-auto px-6 relative z-10">
-<div class="hero-gradient w-full md:w-3/5 p-12 !rounded-lg">
-<h1 class="text-5xl md:text-6xl font-bold text-blue-700 mb-6">
-Discover Your Heritage
-</h1>
-<p class="text-xl text-blue-700 mb-8">
-Explore the rich history and lineage of the Bastakoti family through our comprehensive genealogical research platform.
-</p>
-<div class="flex flex-col sm:flex-row gap-4">
-<button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition-colors cursor-pointer whitespace-nowrap text-lg">
-Start Exploring
-</button>
-<button class="bg-white text-primary border-2 border-primary px-8 py-3 !rounded-button hover:bg-gray-50 transition-colors cursor-pointer whitespace-nowrap text-lg">
-Learn More
-</button>
-</div>
-</div>
-</div>
-<div class="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-down">
-<i class="ri-arrow-down-line text-4xl text-primary"></i>
-</div>
-</section>
-<section id="features" class="py-20 bg-gray-50">
-<div class="container mx-auto px-6">
-<h2 class="text-4xl font-bold text-center text-blue-700 mb-16">हाम्रा विशेषताहरू</h2>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="bg-gradient-to-br from-rose-500 to-orange-400 p-8 !rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-16 h-16 flex items-center justify-center bg-white/20 !rounded-full mb-6">
-<i class="ri-search-line text-2xl text-white"></i>
-</div>
-<h3 class="text-xl font-bold text-white mb-4">परिवार खोज: </h3>
-<p class="text-white/90">
-अग्रगामी खोज सुविधाहरू जसले तपाईंलाई आफ्नो पारिवारिक मूल सजिलै र शुद्धतापूर्वक पत्ता लगाउन मद्दत गर्दछ।
-</p>
-</div>
-<div class="bg-gradient-to-br from-emerald-500 to-teal-400 p-8 !rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-16 h-16 flex items-center justify-center bg-white/20 !rounded-full mb-6">
-<i class="ri-file-list-3-line text-2xl text-white"></i>
-</div>
-<h3 class="text-xl font-bold text-white mb-4">डिजिटल रेकर्ड्स</h3>
-<p class="text-white/90">
-बास्ताकोटी वंशावलीको डिजिटल रूपमा उपलब्ध ऐतिहासिक कागजात र रेकर्डहरू तक पहुँच।
-</p>
-</div>
-<div class="bg-gradient-to-br from-blue-500 to-indigo-400 p-8 !rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-<div class="w-16 h-16 flex items-center justify-center bg-white/20 !rounded-full mb-6">
-<i class="ri-community-line text-2xl text-white"></i>
-</div>
-<h3 class="text-xl font-bold text-white mb-4">सामुदायिक जडान</h3>
-<p class="text-white/90">
-हाम्रो सामुदायिक प्लेटफर्म मार्फत अन्य परिवार सदस्यहरूसँग जडान हुनुहोस् र कथाहरू साझा गर्नुहोस्।
-</p>
-</div>
-</div>
-</div>
-</section>
-<section id="about" class="py-20">
-<div class="container mx-auto px-6">
-<div class="flex flex-col md:flex-row items-center gap-12">
-<div class="w-full md:w-1/2">
-<img src="https://public.readdy.ai/ai/img_res/4d7db6f440b765e6b69e8419a278baa5.jpg" alt="About Us" class="w-full h-[400px] object-cover !rounded-lg shadow-xl">
-</div>
-<div class="w-full md:w-1/2">
-<h2 class="text-4xl font-bold text-blue-700 mb-6">हाम्रो संस्था को बारेमा</h2>
-<p class="text-gray-600 mb-6">
-बस्ताकोटी वंश अनुसन्धान परिषद् बस्ताकोटी परिवारको समृद्ध विरासत संरक्षण र दस्तावेजीकरण गर्न समर्पित छ। हाम्रो संस्था परम्परागत वंशावली अनुसन्धान विधिहरूलाई आधुनिक प्रविधिसँग संयोजन गरी परिवारको इतिहासको व्यापक डाटाबेस निर्माण गर्न प्रयासरत छ।
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-['Pacifico'] text-3xl text-primary">Bama Travels</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary">Home</a>
+                    <a href="#packages" class="text-gray-700 hover:text-primary">Packages</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-primary">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary">Contact</a>
+                    <button class="bg-primary text-white px-6 py-2 !rounded-button cursor-pointer hover:bg-opacity-90">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-२०१० मा स्थापना भएको यस संस्थाले पुस्तौँदेखि परिवारका सदस्यहरूलाई जोड्ने तथा हाम्रो सांस्कृतिक सम्पदालाई भावी पुस्ताका लागि सुरक्षित राख्ने उद्देश्यले अहोरात्र मेहनत गरिरहेको छ।
-<p class="text-gray-600 mb-8">
-</p>
-<button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition-colors cursor-pointer whitespace-nowrap">
-Learn More About Us
-</button>
-</div>
-</div>
-</div>
-</section>
-<section id="download" class="py-20 bg-gray-50">
-<div class="container mx-auto px-6 text-center">
-<h2 class="text-4xl font-bold text-blue-700 mb-6">Download Banshabali</h2>
-<p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-Access our comprehensive genealogical database and discover your family history with our easy-to-use Banshabali application.
-</p>
-<div class="flex flex-col sm:flex-row justify-center gap-6">
-<button class="flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 !rounded-button hover:bg-secondary transition-colors cursor-pointer whitespace-nowrap">
-<i class="ri-android-fill text-2xl"></i>
-Download for Android
-</button>
-<button class="flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 !rounded-button hover:bg-secondary transition-colors cursor-pointer whitespace-nowrap">
-<i class="ri-apple-fill text-2xl"></i>
-Download for Iphone
-</button>
-</div>
-</div>
-</section>
-<section id="contact" class="py-20">
-<div class="container mx-auto px-6">
-<div class="max-w-4xl mx-auto">
-<h2 class="text-4xl font-bold text-center text-blue-700 mb-12">Contact Us</h2>
-<div class="mb-8 w-full h-[400px] !rounded-lg overflow-hidden relative">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2705268542!2d85.31404531503673!3d27.705735982790663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995950e6ee4369b:0x991388524c421e95!2sPython+Tech+Com+Nepal+Pvt.+Ltd.!5e0!3m2!1sen!2sus!4v1653929457858!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-<div class="bg-white shadow-lg !rounded-lg p-8 mb-8">
-<div class="space-y-4">
-<div class="flex items-start gap-3">
-<i class="ri-map-pin-line text-xl text-primary mt-1"></i>
-<span class="text-gray-700">Bastakoti Bansha Anusandhan Parishadh Nepal, Pokhara, Nepal</span>
-</div>
-<div class="flex items-start gap-3">
-<i class="ri-phone-line text-xl text-primary mt-1"></i>
-<span class="text-black">For Software/web +977 9856020179 or office: 061 411669 / 779 / 889</span>
-</div>
-<div class="flex items-start gap-3">
-<i class="ri-mail-line text-xl text-primary mt-1"></i>
-<span class="text-gray-700">info@bastakotibansha.org.np</span>
-</div>
-</div>
-</div>
-<div class="bg-white shadow-xl !rounded-lg p-8">
-<form class="space-y-6">
-<div class="grid md:grid-cols-2 gap-6">
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-<input type="text" class="w-full px-4 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-<input type="text" class="w-full px-4 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-<input type="email" class="w-full px-4 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
-</div>
-<div>
-<label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-<textarea rows="4" class="w-full px-4 py-2 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-</div>
-<button type="submit" class="w-full bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition-colors cursor-pointer whitespace-nowrap">
-Send Message
-</button>
-</form>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="bg-gray-900 text-white py-12">
-<div class="container mx-auto px-6">
-<div class="grid md:grid-cols-4 gap-8">
-<div>
-<div class="flex items-center gap-3 mb-4">
-<img src="https://readdy.ai/api/search-image?query=A minimalist and elegant logo design featuring a stylized family tree symbol with traditional Nepalese decorative elements. The design incorporates clean lines and sacred geometry patterns, rendered in deep indigo blue color. The composition is balanced and professional, suitable for a heritage organization. The style is modern yet culturally rooted, with subtle gradients and precise details&width=48&height=48&seq=1&orientation=squarish" alt="BBAP Logo" class="w-12 h-12 object-contain">
-<div class="font-['Pacifico'] text-2xl text-white">BBAP</div>
-</div>
-<p class="text-gray-400">
-Preserving our heritage, connecting generations.
-</p>
-</div>
-<div>
-<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-<ul class="space-y-2">
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Download</a></li>
-</ul>
-</div>
-<div>
-<h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-<ul class="space-y-2 text-gray-400">
-<li class="flex items-center gap-2">
-<i class="ri-map-pin-line"></i>
-<span>Bastakoti Bansha Anusandhan Parishadh Nepal, Pokhara</span>
-</li>
-<li class="flex items-center gap-2">
-<i class="ri-phone-line"></i>
-<span>+977 061 411669 / 779 / 889</span>
-</li>
-<li class="flex items-center gap-2">
-<i class="ri-mail-line"></i>
-<span>info@bastakotibansha.org.np</span>
-</li>
-</ul>
-</div>
-<div>
-<h3 class="text-lg font-semibold mb-4">Follow Us</h3>
-<div class="flex space-x-4">
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 !rounded-full hover:bg-primary transition-colors">
-<i class="ri-facebook-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 !rounded-full hover:bg-primary transition-colors">
-<i class="ri-twitter-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 !rounded-full hover:bg-primary transition-colors">
-<i class="ri-instagram-fill"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-<p>&copy; 2025 Bastakoti Bansha Anusandhan Parishad Nepal. All rights reserved.</p>
-</div>
-</div>
-</footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-const mobileMenuButton = document.querySelector('.md\\:hidden');
-const nav = document.querySelector('.md\\:flex');
-mobileMenuButton.addEventListener('click', function() {
-nav.classList.toggle('hidden');
-});
-// Slideshow functionality
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-function showSlide(index) {
-slides.forEach(slide => slide.classList.remove('active'));
-slides[index].classList.add('active');
-}
-function nextSlide() {
-currentSlide = (currentSlide + 1) % slides.length;
-showSlide(currentSlide);
-}
-// Show first slide initially
-showSlide(0);
-// Auto advance slides
-setInterval(nextSlide, 5000);
-const form = document.querySelector('form');
-form.addEventListener('submit', function(e) {
-e.preventDefault();
-const formData = new FormData(form);
-const data = Object.fromEntries(formData);
-const notification = document.createElement('div');
-notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 !rounded-lg shadow-lg';
-notification.textContent = 'Message sent successfully!';
-document.body.appendChild(notification);
-setTimeout(() => {
-notification.remove();
-}, 3000);
-form.reset();
-});
-});
-</script>
+    <section class="hero-section min-h-screen flex items-center relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-white">
+                <h1 class="text-5xl font-bold mb-4">Discover Nepal's Hidden Treasures</h1>
+                <p class="text-xl mb-8">Experience the magic of the Himalayas with our expertly curated travel packages</p>
+                <div class="flex space-x-4">
+                    <button class="bg-primary text-white px-8 py-3 !rounded-button cursor-pointer hover:bg-opacity-90">Explore Packages</button>
+                    <button class="border-2 border-white text-white px-8 py-3 !rounded-button cursor-pointer hover:bg-white hover:text-gray-900">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50" id="packages">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Popular Packages</h2>
+                <p class="text-gray-600">Choose from our selection of carefully crafted travel experiences</p>
+            </div>
+            <div class="flex flex-wrap gap-8 justify-center">
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden w-[380px]">
+                    <img src="https://public.readdy.ai/ai/img_res/2911354e4552b6d63d76297222ad4d64.jpg" alt="Annapurna Base Camp Trek" class="w-full h-[250px] object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Annapurna Base Camp Trek</h3>
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">(128 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-gray-600">Duration:</span>
+                                <span class="font-semibold">12 Days</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600">From</span>
+                                <span class="text-2xl font-bold text-primary">$1,299</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-primary text-white py-3 !rounded-button cursor-pointer hover:bg-opacity-90">View Details</button>
+                    </div>
+                </div>
+
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden w-[380px]">
+                    <img src="https://public.readdy.ai/ai/img_res/0942a45c0bdf42841a8480facba84a70.jpg" alt="Everest Base Camp Trek" class="w-full h-[250px] object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Everest Base Camp Trek</h3>
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">(256 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-gray-600">Duration:</span>
+                                <span class="font-semibold">14 Days</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600">From</span>
+                                <span class="text-2xl font-bold text-primary">$1,599</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-primary text-white py-3 !rounded-button cursor-pointer hover:bg-opacity-90">View Details</button>
+                    </div>
+                </div>
+
+                <div class="package-card bg-white rounded-lg shadow-lg overflow-hidden w-[380px]">
+                    <img src="https://public.readdy.ai/ai/img_res/5a9aed158c90b31b7c18d1e33872c00f.jpg" alt="Pokhara Adventure" class="w-full h-[250px] object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pokhara Adventure</h3>
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">(98 reviews)</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-gray-600">Duration:</span>
+                                <span class="font-semibold">5 Days</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600">From</span>
+                                <span class="text-2xl font-bold text-primary">$699</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-primary text-white py-3 !rounded-button cursor-pointer hover:bg-opacity-90">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20" id="testimonials">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Travelers Say</h2>
+                <p class="text-gray-600">Real experiences from our valued customers</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://public.readdy.ai/ai/img_res/964c6167888083c625aea54f2e7f3f16.jpg" alt="James Wilson" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">James Wilson</h4>
+                            <p class="text-gray-600">United Kingdom</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-700">"An incredible experience with Bama Travels! The Everest Base Camp trek was perfectly organized, and our guide was extremely knowledgeable. Will definitely return for more adventures!"</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://public.readdy.ai/ai/img_res/834bc316752efdebb8bc559f38efacd4.jpg" alt="Sarah Chen" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sarah Chen</h4>
+                            <p class="text-gray-600">Singapore</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                    </div>
+                    <p class="text-gray-700">"The Annapurna Circuit was breathtaking! Bama Travels took care of everything, making it a stress-free journey. The accommodations were comfortable and the food was excellent."</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://public.readdy.ai/ai/img_res/3900c88d4160379ac0e1a731f3854535.jpg" alt="Emily Thompson" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Emily Thompson</h4>
+                            <p class="text-gray-600">United States</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-700">"Pokhara Adventure package was amazing! From paragliding to boating on Phewa Lake, every activity was well-planned. The staff was friendly and professional. Highly recommended!"</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <button onclick="showReviewForm()" class="bg-primary text-white px-8 py-3 !rounded-button cursor-pointer hover:bg-opacity-90">Share Your Experience</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-gray-600">Get in touch with our travel experts</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Message</label>
+                            <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary h-32" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 !rounded-button cursor-pointer hover:bg-opacity-90">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Our Office</h3>
+                            <p class="flex items-center text-gray-600">
+                                <i class="ri-map-pin-line w-6 h-6 mr-2"></i>
+                                Mustang Chowk, Pokhara, Nepal
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                            <p class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-phone-line w-6 h-6 mr-2"></i>
+                                +061 411 669 / 779 / 889
+                            </p>
+                            <p class="flex items-center text-gray-600">
+                                <i class="ri-mail-line w-6 h-6 mr-2"></i>
+                                info@bamatravels.com.np
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-600 hover:text-primary">
+                                    <i class="ri-facebook-fill w-6 h-6"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-primary">
+                                    <i class="ri-instagram-fill w-6 h-6"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-primary">
+                                    <i class="ri-twitter-fill w-6 h-6"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="review-form bg-white p-8 rounded-lg shadow-2xl max-w-lg w-full">
+        <h3 class="text-2xl font-bold mb-6">Share Your Experience</h3>
+        <form id="reviewForm" class="space-y-6">
+            <div>
+                <label class="block text-gray-700 mb-2">Name</label>
+                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+            </div>
+            <div>
+                <label class="block text-gray-700 mb-2">Rating</label>
+                <div class="flex text-yellow-400 text-2xl">
+                    <i class="ri-star-line cursor-pointer" onclick="setRating(1)"></i>
+                    <i class="ri-star-line cursor-pointer" onclick="setRating(2)"></i>
+                    <i class="ri-star-line cursor-pointer" onclick="setRating(3)"></i>
+                    <i class="ri-star-line cursor-pointer" onclick="setRating(4)"></i>
+                    <i class="ri-star-line cursor-pointer" onclick="setRating(5)"></i>
+                </div>
+            </div>
+            <div>
+                <label class="block text-gray-700 mb-2">Review</label>
+                <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary h-32" required></textarea>
+            </div>
+            <div class="flex justify-end space-x-4">
+                <button type="button" onclick="hideReviewForm()" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Cancel</button>
+                <button type="submit" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-opacity-90">Submit Review</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="overlay"></div>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-['Pacifico'] text-2xl text-primary mb-4">Bama Travels</h3>
+                    <p class="text-gray-400">Your trusted partner for unforgettable adventures in Nepal.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-white">Packages</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Popular Destinations</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Everest Base Camp</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Annapurna Circuit</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pokhara</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Kathmandu Valley</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get special offers and updates.</p>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Your email address" class="w-full px-4 py-2 rounded-lg bg-gray-800 border-none text-white placeholder-gray-400">
+                        <button type="submit" class="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex justify-between items-center">
+                <p class="text-gray-400">&copy; 2025 Bama Travels. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <img src="https://public.readdy.ai/ai/img_res/e3cf79e8ac519bbcb06145214d5ff3cf.jpg" alt="Visa" class="h-6">
+                    <img src="https://public.readdy.ai/ai/img_res/d2d10b61ec45b3b55344e4bc2b89e424.jpg" alt="Mastercard" class="h-6">
+                    <img src="https://public.readdy.ai/ai/img_res/b59164b3fc68b2b6427ba9d6907f90d9.jpg" alt="PayPal" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showReviewForm() {
+            document.querySelector('.review-form').style.display = 'block';
+            document.querySelector('.overlay').style.display = 'block';
+        }
+
+        function hideReviewForm() {
+            document.querySelector('.review-form').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        }
+
+        function setRating(rating) {
+            const stars = document.querySelectorAll('.review-form .ri-star-line');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.remove('ri-star-line');
+                    star.classList.add('ri-star-fill');
+                } else {
+                    star.classList.remove('ri-star-fill');
+                    star.classList.add('ri-star-line');
+                }
+            });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            console.log('Contact form submitted:', Object.fromEntries(formData));
+            e.target.reset();
+        });
+
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            console.log('Review form submitted:', Object.fromEntries(formData));
+            hideReviewForm();
+            e.target.reset();
+        });
+    </script>
 </body>
 </html>
