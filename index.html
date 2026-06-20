@@ -245,21 +245,21 @@
     <div class="bt-pkg-card" onclick="openModal('Explorer Package')">
       <div class="bt-pkg-badge">EXPLORER</div>
       <div class="bt-pkg-title">Explorer</div>
-      <div class="bt-pkg-price">$799 <span>/ person</span></div>
+      <div class="bt-pkg-price">$499 <span>/ person</span></div>
       <ul class="bt-pkg-features"><li>3 destinations</li><li>4-star accommodation</li><li>Airport transfers</li><li>Travel insurance</li></ul>
       <button class="bt-pkg-btn outline" onclick="event.stopPropagation();openModal('Explorer Package')">Learn More</button>
     </div>
     <div class="bt-pkg-card featured" onclick="openModal('Luxury Escape')">
       <div class="bt-pkg-badge">⭐ MOST POPULAR</div>
       <div class="bt-pkg-title">Luxury Escape</div>
-      <div class="bt-pkg-price">$1,599 <span>/ person</span></div>
+      <div class="bt-pkg-price">$999 <span>/ person</span></div>
       <ul class="bt-pkg-features"><li>5 destinations</li><li>5-star luxury hotels</li><li>Private guided tours</li><li>Full travel protection</li><li>VIP airport lounge</li></ul>
       <button class="bt-pkg-btn" onclick="event.stopPropagation();openModal('Book Luxury Escape')">Book Now</button>
     </div>
     <div class="bt-pkg-card" onclick="openModal('Family Package')">
       <div class="bt-pkg-badge">FAMILY</div>
       <div class="bt-pkg-title">Family Fun</div>
-      <div class="bt-pkg-price">$1,199 <span>/ family</span></div>
+      <div class="bt-pkg-price">$9199 <span>/ family</span></div>
       <ul class="bt-pkg-features"><li>Kid-friendly resorts</li><li>Family guided tours</li><li>Meals included</li><li>Travel insurance</li></ul>
       <button class="bt-pkg-btn outline" onclick="event.stopPropagation();openModal('Family Package')">Learn More</button>
     </div>
@@ -374,8 +374,8 @@
     <button class="bt-modal-close" onclick="closeModal()">✕</button>
     <h3 id="modalTitle">Book a Trip</h3>
     <p id="modalDesc">Fill in your details and our team will get back to you within 24 hours.</p>
-    <div class="bt-modal-field"><label>Full Name</label><input type="text" placeholder="John Doe"></div>
-    <div class="bt-modal-field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+    <div class="bt-modal-field"><label>Full Name</label><input type="text" placeholder="Ramraja Bastakti"></div>
+    <div class="bt-modal-field"><label>Email</label><input type="email" placeholder="your email@email.com"></div>
     <div class="bt-modal-field"><label>Destination</label>
       <select><option>Bali, Indonesia</option><option>Santorini, Greece</option><option>Maldives</option><option>Kyoto, Japan</option><option>Dubai, UAE</option></select>
     </div>
@@ -463,6 +463,6 @@ function openModal(title){
 }
 function closeModal(){document.getElementById('modal').classList.remove('open');}
 function closeModalBg(e){if(e.target.id==='modal')closeModal();}
-function submitModal(){closeModal();showToast('✦ Enquiry sent! We\'ll contact you within 24 hours.');}
+function submitModal(){closeModal();showToast('✦ Enquiry sent! We\'ll contact you within 24 hours. For any immedeate query call/whatsapp or message us  us at: +977 9856020179');}
 function subscribeNewsletter(){const e=document.getElementById('nlEmail').value.trim();if(!e||!e.includes('@')){showToast('Please enter a valid email address.');return;}document.getElementById('nlEmail').value='';showToast('🎉 Welcome to Bama Travels! Check your inbox soon.');}
 </script>
